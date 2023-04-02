@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LangtonsAnt {
@@ -21,11 +22,40 @@ public class LangtonsAnt {
             return;
         }
 
-        // Create ant here.
+        Ant ant = new Ant(board_size, ant_row, ant_column, ant_orientation, steps);
+        ant.draw_board();
+        ant.print_board();
 
     }
 }
 
 class Ant {
+    int board_size, ant_row, ant_column, ant_orientation, steps;
+    char ant_board[][];
 
+    Ant(int bs, int ar, int ac, int ao, int st) {
+        board_size = bs;
+        ant_row = ar;
+        ant_column = ac;
+        ant_orientation = ao;
+        steps = st;
+        ant_board = new char[board_size][board_size];
+    }
+
+    void draw_board() {
+        // Draw the board based on the input.
+        for (int i = 0; i < ant_board.length; i++) {
+            Arrays.fill(ant_board[i], '_');
+        }
+        // Place the ant on the board.
+        ant_board[ant_row][ant_column] = '8';
+    }
+
+    void print_board() {
+        // Print the final board.
+        for (int i = 0; i < board_size; i++) {
+            String row = Arrays.toString(ant_board[i]).replace("[", "").replace("]", "").replace(", ", "");
+            System.out.println(row);
+        }
+    }
 }
