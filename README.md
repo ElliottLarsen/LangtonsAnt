@@ -6,6 +6,10 @@ This is a Langton's Ant simulation, which is a two-dimensional universal Turing 
 
 ## GIF Walkthrough
 
+<p>
+<image src = "LangtonsAnt.gif" title = "Langton's Ant GIF" height = 900 width = 549>
+</p>
+
 ## Project Details
 * When the program first starts, it will prompt the user to enter the following information:
     * A number for the size of the square board.
