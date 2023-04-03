@@ -43,10 +43,10 @@ class Ant {
     void draw_board() {
         // Draw the board based on the input.
         for (int i = 0; i < ant_board.length; i++) {
-            Arrays.fill(ant_board[i], '_');
+            Arrays.fill(ant_board[i], '-');
         }
         // Place the ant on the board.
-        ant_board[ant_row][ant_column] = '8';
+        ant_board[ant_row][ant_column] = 'A';
     }
 
     void if_wrap() {
@@ -65,13 +65,13 @@ class Ant {
     void move_up() {
         // Move the ant up a space.
         step_counter += 1;
-        if (ant_board[ant_row][ant_column] != '#') {
-            ant_board[ant_row][ant_column] = '#';
+        if (ant_board[ant_row][ant_column] != '*') {
+            ant_board[ant_row][ant_column] = '*';
             ant_orientation += 1;
             ant_column += 1;
             this.if_wrap();
         } else {
-            ant_board[ant_row][ant_column] = '_';
+            ant_board[ant_row][ant_column] = '-';
             ant_orientation -=1 ;
             ant_column -= 1;
             this.if_wrap();
@@ -81,13 +81,13 @@ class Ant {
     void move_down() {
         // Move the ant down a space.
         step_counter += 1;
-        if (ant_board[ant_row][ant_column] != '#') {
-            ant_board[ant_row][ant_column] = '#';
+        if (ant_board[ant_row][ant_column] != '*') {
+            ant_board[ant_row][ant_column] = '*';
             ant_orientation += 1;
             ant_column -= 1;
             this.if_wrap();
         } else {
-            ant_board[ant_row][ant_column] = '_';
+            ant_board[ant_row][ant_column] = '-';
             ant_orientation -= 1;
             ant_column += 1;
             this.if_wrap();
@@ -97,13 +97,13 @@ class Ant {
     void move_right() {
         // Move the ant to right.
         step_counter += 1;
-        if (ant_board[ant_row][ant_column] != '#') {
-            ant_board[ant_row][ant_column] = '#';
+        if (ant_board[ant_row][ant_column] != '*') {
+            ant_board[ant_row][ant_column] = '*';
             ant_orientation += 1;
             ant_row += 1;
             this.if_wrap();
         } else {
-            ant_board[ant_row][ant_column] = '_';
+            ant_board[ant_row][ant_column] = '-';
             ant_orientation -= 1;
             ant_row -= 1;
             this.if_wrap();
@@ -113,13 +113,13 @@ class Ant {
     void move_left() {
         // Move the ant to left.
         step_counter += 1;
-        if (ant_board[ant_row][ant_column] != '#') {
-            ant_board[ant_row][ant_column] = '#';
+        if (ant_board[ant_row][ant_column] != '*') {
+            ant_board[ant_row][ant_column] = '*';
             ant_orientation += 1;
             ant_row -= 1;
             this.if_wrap();
         } else {
-            ant_board[ant_row][ant_column] = '_';
+            ant_board[ant_row][ant_column] = '-';
             ant_orientation -= 1;
             ant_row += 1;
             this.if_wrap();
@@ -151,7 +151,7 @@ class Ant {
                 this.move_left();
             }
         }
-        ant_board[ant_row][ant_column] = '8';
+        ant_board[ant_row][ant_column] = 'A';
         this.print_board();
     }
 }
